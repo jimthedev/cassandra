@@ -1,2 +1,2 @@
 FROM cassandra
-ONBUILD RUN /usr/bin/nodetool enablethrift
+RUN sed -i 's/^start_rpc.*$/start_rpc: true/' /etc/cassandra/cassandra.yaml
